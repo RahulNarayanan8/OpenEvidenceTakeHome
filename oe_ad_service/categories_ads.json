@@ -1,0 +1,74 @@
+{
+    "arthritis": {
+      "ad_path": "ad_images/pfizer_arthritis.png",
+      "company": "pfizer",
+      "category_cost": 60,
+      "link":"https://www.xeljanz.com/"
+    },
+    "meningitis": {
+      "ad_path": "ad_images/pfizer_meningitis.png",
+      "company": "pfizer",
+      "category_cost": 50,
+      "link":"https://penbraya.pfizerpro.com/"
+    },
+    "pneumonia": {
+      "ad_path": "ad_images/pfizer_pneumonia.png",
+      "company": "pfizer",
+      "category_cost": 40,
+      "link":"https://www.pfizer.com/products/product-detail/prevnar-20tm"
+    },
+    "breast cancer": {
+      "ad_path": "ad_images/genentech_breast_cancer.png",
+      "company": "genentech",
+      "category_cost": 70,
+      "link": "https://www.gene.com/patients/medicines/herceptin"
+    },
+    "lung cancer": {
+      "ad_path": "ad_images/genentech_lung_cancer.png",
+      "company": "genentech",
+      "category_cost": 40,
+      "link": "https://www.gene.com/patients/medicines/tecentriq"
+    },
+    "melanoma": {
+      "ad_path": "ad_images/genentech_melanoma.png",
+      "company": "genentech",
+      "category_cost": 30,
+      "link": "https://www.gene.com/patients/medicines/zelboraf"
+    },
+    "allergy": {
+      "ad_path": "ad_images/gsk_allergy.png",
+      "company": "gsk",
+      "category_cost": 60,
+      "link": "https://www.flonase.com/"
+    },
+    "asthma": {
+      "ad_path": "ad_images/gsk_asthma.png",
+      "company": "gsk",
+      "category_cost": 60,
+      "link": "https://www.trelegy.com/asthma/why-trelegy-for-asthma/"
+    },
+    "hiv": {
+      "ad_path": "ad_images/gsk_hiv.png",
+      "company": "gsk",
+      "category_cost": 20,
+      "link": "https://www.dovato.com/"
+    },
+    "diabetes": {
+      "ad_path": "ad_images/lilly_diabetes.png",
+      "company": "eli lilly",
+      "category_cost": 60,
+      "link": "https://trulicity.lilly.com/"
+    },
+    "obesity": {
+      "ad_path": "ad_images/lilly_obesity.png",
+      "company": "eli lilly",
+      "category_cost": 60,
+      "link": "https://www.lilly.com/lillydirect/medicines/zepbound"
+    },
+    "pancreatic cancer": {
+      "ad_path": "ad_images/lilly_pancreatic_cancer.png",
+      "company": "eli lilly",
+      "category_cost": 30,
+      "link": "https://retevmo.lilly.com/"
+    }
+  }

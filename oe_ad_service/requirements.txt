@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+transformers
+scikit-learn
+pydantic
+openai
