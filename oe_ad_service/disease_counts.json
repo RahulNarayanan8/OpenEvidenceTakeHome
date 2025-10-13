@@ -1,8 +1,12 @@
 {
   "diabetes": 5,
   "gout": 2,
-  "breast cancer": 3,
+  "breast cancer": 14,
   "eczema": 1,
   "crohn's disease": 2,
-  "hypertension": 2
+  "hypertension": 8,
+  "lung cancer": 6,
+  "melanoma": 4,
+  "obesity": 3,
+  "pancreatic cancer": 3
 }

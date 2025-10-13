@@ -129,7 +129,6 @@ def gpt_lookup(query):
     return gpt_response
 
 
-#Establishing right here that the categories are diseases
 def prepare_prompt(user_question):
     return f"""You are tasked with identifying the relevant diseases or conditions that mentioned, referenced, or relevant to the user question
     being asked below. You will return the output in the following manner:
@@ -154,9 +153,3 @@ def prepare_prompt(user_question):
     Here is the user question:
     {user_question}
     """
-
-# def main():
-#     question = "What are some new treatments for pancreatic cancer and diabetes?"
-#     ad = get_highest_paying_ad(question)
-
-#     print(ad)
