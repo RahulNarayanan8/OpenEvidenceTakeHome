@@ -48,6 +48,8 @@ The ads, when clicked take the user to a link for the drug relevant to the disea
 
 The ads and their information are stored in the categories_ads.json file.
 
+Unit tests for functionality (specifically in the classify.py file) are available in tests.py
+
 ### Data Collection
 Several different kinds of data are collected in the app. The number of times each disease is mentioned as a keyword is recorded and stored in the disease_counts.json file. Additionally, the number of times each ad is clicked on is recorded in the ad_clicks.json file. Also, the total amount of time spent on each query is stored in disease_times.json (organized by disease). The number of mentions of uncategorized diseases is available in uncategorized.json.
 
