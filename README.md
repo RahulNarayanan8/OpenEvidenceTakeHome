@@ -44,7 +44,7 @@ The application integrates advertisements into the toy OpenEvidence frontend. Th
 
 The query is parsed by an LLM in order to extract disease keywords. These keywords are then validated against the purchased categories for the different drug companies. The category that was purchased for the greatest amount of money then has the ad for that category shown. The images for the ads themselves were generating using Google Gemini AI image generation.
 
-The ads, when clicked take the user to a link for the drug relevant to the disease category and company that had purchased that disease category.
+The ads, when clicked take the user to a link for the drug relevant to the disease category and company that had purchased that disease category. Each disease category is owned by one drug company. The drug company pays a certain price to acquire a category and the price is related to how common the disease is (Obesity is more expensive and more common than HIV).
 
 The ads and their information are stored in the categories_ads.json file.
 
