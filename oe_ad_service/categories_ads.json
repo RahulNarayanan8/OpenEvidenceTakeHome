@@ -42,10 +42,10 @@
     "link": "https://www.flonase.com/"
   },
   "asthma": {
-    "ad_path": "ad_images/gsk_asthma.png",
-    "company": "gsk",
-    "category_cost": 68.0,
-    "link": "https://www.trelegy.com/"
+    "ad_path": "ad_images/genentech_asthma.png",
+    "company": "genentech",
+    "category_cost": 69.0,
+    "link": "https://www.xolairhcp.com/"
   },
   "hiv": {
     "ad_path": "ad_images/gsk_hiv.png",

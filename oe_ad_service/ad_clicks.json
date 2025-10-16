@@ -28,7 +28,7 @@
     "clicks": 1
   },
   "asthma": {
-    "clicks": 0,
+    "clicks": 1,
     "mentions": 0
   },
   "hiv": {
@@ -37,7 +37,7 @@
   },
   "diabetes": {
     "company": "eli lilly",
-    "clicks": 1
+    "clicks": 2
   },
   "obesity": {
     "company": "eli lilly",
@@ -45,6 +45,6 @@
   },
   "pancreatic cancer": {
     "company": "eli lilly",
-    "clicks": 1
+    "clicks": 2
   }
 }
