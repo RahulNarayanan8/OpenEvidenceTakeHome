@@ -9,7 +9,6 @@ export default function BuyCategoryPage() {
   const [selectedDisease, setSelectedDisease] = useState('');
   const [company, setCompany] = useState('');
   const [bidPrice, setBidPrice] = useState('');
-  const [adImage, setAdImage] = useState('');
   const [adLink, setAdLink] = useState('');
   const [message, setMessage] = useState('');
   const [open, setOpen] = useState(false);
@@ -28,7 +27,6 @@ export default function BuyCategoryPage() {
         disease: selectedDisease,
         company,
         bid_price: bidPrice,
-        ad_image: adImage,
         ad_link: adLink,
       });
       setMessage(res.data.message);
@@ -61,7 +59,6 @@ export default function BuyCategoryPage() {
 
         <TextField label="Your Company Name" fullWidth margin="normal" value={company} onChange={(e) => setCompany(e.target.value)} />
         <TextField label="Your Bid Price ($)" fullWidth margin="normal" value={bidPrice} onChange={(e) => setBidPrice(e.target.value)} />
-        <TextField label="Ad Image Path (Relative Path) (Ex: ad_images/genentech_allergy.png)" fullWidth margin="normal" value={adImage} onChange={(e) => setAdImage(e.target.value)} />
         <TextField label="Ad Link (URL)" fullWidth margin="normal" value={adLink} onChange={(e) => setAdLink(e.target.value)} />
 
         <Button

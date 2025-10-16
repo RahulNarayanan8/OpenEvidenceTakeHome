@@ -4,6 +4,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'next/navigation';
 import { Container, Typography, Paper, List, ListItem, ListItemText, CircularProgress, AppBar, Toolbar, Button } from '@mui/material';
+import { Table, TableBody, TableCell, TableRow } from "@mui/material";
+
 
 interface DiseaseSummary {
   disease: string;
@@ -93,32 +95,42 @@ export default function CompanyPage() {
               <ListItemText
                 primary={<Typography variant="h6">{item.disease}</Typography>}
                 secondary={
-                  <>
-                    <Typography variant="body2">
-                      Percentage of Queries Mentioning Disease: {item.mentions_per_query}
-                    </Typography>
-                    <Typography variant="body2">
-                      Click Through Rate: {item.clicks_per_mention.toFixed(2)}
-                    </Typography>
-                    <Typography variant="body2">
-                      Total Time Spent: {item.times.toFixed(2)} seconds
-                    </Typography>
-                    <Typography variant="body2">
-                      Monthly Category Cost: ${item.monthly_category_cost.toFixed(2)}
-                    </Typography>
-                    <Typography variant="body2">
-                      Total Paid for Category: ${item.total_paid.toFixed(2)}
-                    </Typography>
-                    <Typography variant="body2">
-                      Clicks Per Dollar: {item.clicks_per_dollar.toFixed(2)}
-                    </Typography>
-                    <Typography variant="body2">
-                      Mentions Per Day: {item.mentions_per_day.toFixed(2)}
-                    </Typography>
-                    <Typography variant="body2">
-                      Clicks Per Day: {item.clicks_per_day.toFixed(2)}
-                    </Typography>
-                  </>
+                    <Table size="small" sx={{ mt: 1, mb: 1 }}>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Percentage of Queries Mentioning Disease</TableCell>
+                        <TableCell align="right">{item.mentions_per_query}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Click Through Rate</TableCell>
+                        <TableCell align="right">{item.clicks_per_mention.toFixed(2)}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Average Time Spent Per Query</TableCell>
+                        <TableCell align="right">{item.times.toFixed(2)} seconds</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Monthly Category Cost</TableCell>
+                        <TableCell align="right">${item.monthly_category_cost.toFixed(2)}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Total Paid for Category</TableCell>
+                        <TableCell align="right">${item.total_paid.toFixed(2)}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Clicks Per Dollar</TableCell>
+                        <TableCell align="right">{item.clicks_per_dollar.toFixed(2)}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Mentions Per Day</TableCell>
+                        <TableCell align="right">{item.mentions_per_day.toFixed(2)}</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Clicks Per Day</TableCell>
+                        <TableCell align="right">{item.clicks_per_day.toFixed(2)}</TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
                 }
               />
             </ListItem>

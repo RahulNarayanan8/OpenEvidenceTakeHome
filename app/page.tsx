@@ -79,7 +79,6 @@ export default function Home() {
     }
   };
 
-
   const DISEASES = ["arthritis", "meningitis", "pneumonia", "breast cancer", "lung cancer", "melanoma", "allergy", "asthma", "hiv", "diabetes", "obesity", "pancreatic cancer"];
 
   const identifyKeywords = (query: string) => {
@@ -153,20 +152,27 @@ export default function Home() {
   return (
     <>
       <FixedAppBar position="static">
-        <Container maxWidth="md">
-          <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              style={{ flexGrow: 1, fontFamily: 'Roboto, sans-serif' }}
-            >
-              Simple Ask
-            </Typography>
-            <Button color="inherit" onClick={handleNewConversation}>
-              New Conversation
-            </Button>
-          </Toolbar>
-        </Container>
-      </FixedAppBar>
+  <Container maxWidth="md">
+    <Toolbar disableGutters>
+      <Typography
+        variant="h6"
+        style={{ flexGrow: 1, fontFamily: 'Roboto, sans-serif' }}
+      >
+        Simple Ask
+      </Typography>
+      <Box display="flex" gap={1}>
+  <Button color="inherit" onClick={handleNewConversation}>New Conversation</Button>
+  <Button color="inherit" href="/revenue">Revenue Tracker</Button>
+  <Button color="inherit" href="/company/pfizer">Pfizer</Button>
+  <Button color="inherit" href="/company/genentech">Genentech</Button>
+  <Button color="inherit" href="/company/gsk">GSK</Button>
+  <Button color="inherit" href="/company/eli%20lilly">Eli Lilly</Button>
+  <Button color="inherit" href="/categories_for_sale">Categories for Sale</Button>
+  <Button color="inherit" href="/buy_category">Buy Category</Button>
+</Box>
+    </Toolbar>
+  </Container>
+</FixedAppBar>
 
       <Container
         maxWidth="lg"

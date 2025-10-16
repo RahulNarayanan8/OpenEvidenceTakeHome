@@ -5,3 +5,4 @@ scikit-learn
 pydantic
 openai
 matplotlib
+validators

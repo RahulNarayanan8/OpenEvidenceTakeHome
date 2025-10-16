@@ -11,6 +11,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from fastapi.responses import StreamingResponse
+import validators
 
 
 CLICK_DATA_PATH = "ad_clicks.json"
@@ -117,6 +118,51 @@ def categories_for_sale():
     return {"unclaimed_diseases": formatted}
 
 
+@app.get("/categories_for_sale_chart")
+def categories_for_sale_chart():
+    """
+    Returns a bar chart (PNG) of unpurchased but mentioned disease categories.
+    """
+    path = "uncategorized.json"
+
+    if not os.path.exists(path):
+        return {"error": "No uncategorized data found."}
+
+    with open(path, "r") as f:
+        data = json.load(f)
+
+    # Handle both flat and nested structures
+    sorted_diseases = sorted(
+        data.items(),
+        key=lambda x: x[1]["mentions"] if isinstance(x[1], dict) else x[1],
+        reverse=True
+    )
+
+    diseases = [d for d, _ in sorted_diseases][:10]  # top 10 for clarity
+    mentions = [
+        v["mentions"] if isinstance(v, dict) else v
+        for _, v in sorted_diseases[:10]
+    ]
+
+    # --- Create bar chart ---
+    fig, ax = plt.subplots(figsize=(8, 5), dpi=200)
+    ax.barh(diseases[::-1], mentions[::-1], color="#4C9AFF")
+    ax.set_xlabel("Mentions")
+    ax.set_ylabel("Disease")
+    ax.set_title("Top Unpurchased but Mentioned Disease Categories")
+    plt.tight_layout()
+
+    # --- Save to buffer ---
+    buf = io.BytesIO()
+    plt.savefig(buf, format="png", bbox_inches="tight", dpi=200)
+    plt.close(fig)
+    buf.seek(0)
+
+    return StreamingResponse(buf, media_type="image/png")
+
+
+
+
 # Helper function to get json content
 def load_json(file_path):
     if os.path.exists(file_path):
@@ -166,7 +212,7 @@ def company_summary(company_name: str):
             "clicks": clicks.get(cat,{}).get("clicks",0),
             "mentions_per_query": str(round((mentions.get(cat, 0) / total_queries if total_queries > 0 else 0) * 100, 3)) + "%",
             "clicks_per_mention": clicks.get(cat, {}).get("clicks", 0) / mentions.get(cat,0) if mentions.get(cat,0) > 0 else 0,
-            "times": times.get(cat,0) / 1000,
+            "times": (times.get(cat,0) / 1000) / mentions.get(cat, 0) if mentions.get(cat, 0) > 0 else 0,
             "monthly_category_cost": cat_prices.get(cat, 0),
             "total_paid": revenue_fraction * cat_prices.get(cat, 0),
             "clicks_per_dollar": clicks.get(cat,{}).get("clicks",0) / (revenue_fraction * cat_prices.get(cat, 0)),
@@ -353,7 +399,6 @@ def purchase_category(purchase: dict):
     disease = purchase.get("disease")
     new_company = purchase.get("company")
     bid_price = float(purchase.get("bid_price"))
-    new_image = purchase.get("ad_image")
     new_link = purchase.get("ad_link")
 
     new_company = new_company.lower()
@@ -371,6 +416,33 @@ def purchase_category(purchase: dict):
     
     if ads_data[disease]["company"] == new_company:
         return {"error": ads_data[disease]["company"] + " has already purchased " + disease}
+    conversion = {"pfizer":"pfizer", 
+                  "genentech": "genentech", 
+                  "glaxo-smith kline": "gsk", 
+                  "glaxo smith kline": "gsk", 
+                  "glaxosmith kline": "gsk", 
+                  "gsk": "gsk",
+                  "lilly": "lilly",
+                  "eli lilly": "lilly",
+                  "elililly": "lilly",
+                  "eli-lilly": "lilly"
+                  }
+    if new_company.lower() not in conversion:
+        return {"error": ads_data[disease]["company"] + " is not in set of valid drug companies."}
+    def is_float(s):
+        try:
+            float(s)
+            return True
+        except ValueError:
+            return False
+    if not is_float(bid_price):
+        return {"error": "Invalid bid price."}
+    
+    if validators.url(new_link) != True:
+        return {"error": "Invalid link."}
+    
+    new_image = "ad_images/"+ conversion[new_company] + "_" + "_".join(disease.split(" ")) + ".png"
+        
 
     # Update ownership
     ads_data[disease]["company"] = new_company
