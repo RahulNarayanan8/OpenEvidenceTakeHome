@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Demo
+You can find a demo video [here](https://www.youtube.com/watch?v=-zZ3ri2Xnk4)
+
 ## Setup
 
 You will need the `OPENAI_API_KEY` environment variable.
@@ -42,6 +45,7 @@ OPENAI_API_KEY=KEY npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+Backend and frontend servers should be running simultaneously for full functionality.
 
 ## Implementation Details
 ### Overview
