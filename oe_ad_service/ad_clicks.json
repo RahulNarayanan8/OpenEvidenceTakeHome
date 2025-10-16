@@ -1,7 +1,7 @@
 {
   "arthritis": {
     "company": "pfizer",
-    "clicks": 0
+    "clicks": 1
   },
   "meningitis": {
     "company": "pfizer",
@@ -9,11 +9,11 @@
   },
   "pneumonia": {
     "company": "pfizer",
-    "clicks": 0
+    "clicks": 1
   },
   "breast cancer": {
     "company": "genentech",
-    "clicks": 2
+    "clicks": 3
   },
   "lung cancer": {
     "company": "genentech",
@@ -21,19 +21,19 @@
   },
   "melanoma": {
     "company": "genentech",
-    "clicks": 0
+    "clicks": 1
   },
   "allergy": {
     "company": "gsk",
-    "clicks": 0
+    "clicks": 1
   },
   "asthma": {
-    "company": "gsk",
-    "clicks": 0
+    "clicks": 1,
+    "mentions": 0
   },
   "hiv": {
     "company": "gsk",
-    "clicks": 0
+    "clicks": 1
   },
   "diabetes": {
     "company": "eli lilly",
@@ -45,6 +45,6 @@
   },
   "pancreatic cancer": {
     "company": "eli lilly",
-    "clicks": 0
+    "clicks": 1
   }
 }

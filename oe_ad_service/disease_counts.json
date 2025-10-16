@@ -1,12 +1,18 @@
 {
-  "diabetes": 5,
+  "diabetes": 8,
   "gout": 2,
-  "breast cancer": 14,
+  "breast cancer": 16,
   "eczema": 1,
   "crohn's disease": 2,
   "hypertension": 8,
   "lung cancer": 6,
-  "melanoma": 4,
+  "melanoma": 5,
   "obesity": 3,
-  "pancreatic cancer": 3
+  "pancreatic cancer": 4,
+  "hiv": 1,
+  "allergies": 3,
+  "allergy": 2,
+  "arthritis": 1,
+  "pneumonia": 1,
+  "asthma": 2
 }

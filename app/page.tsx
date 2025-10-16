@@ -270,6 +270,8 @@ export default function Home() {
                     marginBottom: '0.5rem',
                   }}
                   onClick={handleAdClick}
+                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1.0)')}
                 />
                 <Typography variant="body2" color="textSecondary">
                   Sponsored by {ad.company}
